@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder | LYTA CAPITAL</title>
+<meta name="description" content="Arata Nakatsuji, founder of LYTA CAPITAL. Built and ran AI ventures in Silicon Valley for five years. Selected for Forbes JAPAN 30 Under 30 (2023) and the World Economic Forum's Global Shapers.">
+<link rel="canonical" href="https://home.lyta-capital.com/en/founder/">
+<link rel="alternate" hreflang="ja" href="https://home.lyta-capital.com/founder/">
+<link rel="alternate" hreflang="en" href="https://home.lyta-capital.com/en/founder/">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="LYTA CAPITAL">
+<meta property="og:title" content="Founder | LYTA CAPITAL">
+<meta property="og:description" content="Arata Nakatsuji, founder of LYTA CAPITAL.">
+<meta property="og:url" content="https://home.lyta-capital.com/en/founder/">
+<meta property="og:image" content="https://home.lyta-capital.com/img/ogp.png">
+<meta property="og:locale" content="en_US">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="wordmark" href="/en/">LYTA CAPITAL</a>
+    <nav class="site-nav">
+      <div class="lang-switch">
+        <a href="/founder/">JP</a><span class="sep">・</span><span class="current">EN</span>
+      </div>
+      <a class="nav-contact" href="/en/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-hero">
+    <p class="section-label reveal">FOUNDER</p>
+    <div class="founder-head reveal">
+      <img class="founder-photo" src="/img/arata.jpg" alt="Arata Nakatsuji" width="200" height="200">
+      <div>
+        <h1>Arata Nakatsuji</h1>
+        <p class="founder-name-en">FOUNDER</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" style="border-top: none; padding-top: 20px;">
+    <div class="founder-body">
+      <p class="statement reveal">Having grown up immersed in Japanese culture, I know this country's depth better than most. Japan holds the world's second-largest pool of household financial assets, yet much of its potential remains untapped. I founded LYTA CAPITAL to unleash that potential at the frontier of the world.</p>
+      <p class="statement reveal">Five years in Silicon Valley showed me how faint Japan's presence has become at the technology frontier. Today I run several investment vehicles, including U.S. startup investments and an AI-native private equity roll-up platform. Alongside them, I lead cross-border advisory work connecting Silicon Valley's capital and technology with Japan's businesses and cultural assets, and an invitation-only program that brings the world's leaders into the centers of Japan's culture and industry.</p>
+
+      <div class="founder-section reveal">
+        <h2>CAREER</h2>
+        <ul>
+          <li>Founded AI ventures in music and healthcare in San Francisco, leading a multinational team of 40</li>
+          <li>Served in the secretariat of the Creator Economy Association, an industry body of 70 member companies</li>
+          <li>Early investor in KSK Fund, the student fund founded by Keisuke Honda</li>
+          <li>Worked on DX in healthcare and real estate, and on the launch of several investment funds</li>
+        </ul>
+      </div>
+
+      <div class="founder-section reveal">
+        <h2>RECOGNITION</h2>
+        <ul>
+          <li>Forbes JAPAN 30 Under 30 (2023)</li>
+          <li>Selected as a Global Shaper by the World Economic Forum</li>
+          <li>Spoke at Waseda University with Hiroshi Mikitani and with Yoshitaka Hori, Chairman of Horipro Group</li>
+          <li>Appeared on PIVOT, a Japanese business video media</li>
+        </ul>
+      </div>
+
+      <div class="founder-section reveal">
+        <h2>EDUCATION</h2>
+        <ul>
+          <li>B.A. in Political Science and Economics, Waseda University</li>
+          <li>Completed a program at Stanford d.school</li>
+        </ul>
+      </div>
+
+      <div class="founder-section reveal">
+        <h2>BEYOND WORK</h2>
+        <ul>
+          <li>Tea ceremony (Urasenke school)</li>
+          <li>Classical vocalist. Won the world choir championship in 2019, with appearances on national television and a performance for the Emperor of Japan.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span class="wordmark">LYTA CAPITAL</span>
+    <p class="footer-tagline">For Japan's next century.</p>
+    <div class="footer-meta">
+      <span>&copy; LYTA CAPITAL, Inc.</span>
+      <span>Tokyo</span>
+      <a href="/en/contact/">Contact</a>
+    </div>
+    <p class="footer-legal">This website is provided for informational purposes only and does not constitute an offer or a solicitation to acquire any securities or other financial products.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

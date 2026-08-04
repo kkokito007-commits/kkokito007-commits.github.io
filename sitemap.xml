@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://home.lyta-capital.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://home.lyta-capital.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://home.lyta-capital.com/en/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://home.lyta-capital.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://home.lyta-capital.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://home.lyta-capital.com/en/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://home.lyta-capital.com/founder/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://home.lyta-capital.com/founder/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://home.lyta-capital.com/en/founder/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://home.lyta-capital.com/en/founder/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://home.lyta-capital.com/founder/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://home.lyta-capital.com/en/founder/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://home.lyta-capital.com/news/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://home.lyta-capital.com/news/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://home.lyta-capital.com/en/news/"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://home.lyta-capital.com/en/news/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://home.lyta-capital.com/news/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://home.lyta-capital.com/en/news/"/>
+    <priority>0.6</priority>
+  </url>
+</urlset>
