@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://home.lyta-capital.com/en/news/">
 <link rel="alternate" hreflang="ja" href="https://home.lyta-capital.com/news/">
 <link rel="alternate" hreflang="en" href="https://home.lyta-capital.com/en/news/">
+<link rel="alternate" hreflang="x-default" href="https://home.lyta-capital.com/en/news/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LYTA CAPITAL">
 <meta property="og:title" content="News | LYTA CAPITAL">
@@ -38,15 +39,15 @@
 <main>
 
   <div class="page-hero">
-    <p class="section-label reveal" style="margin-bottom: 0;">NEWS</p>
+    <h1 class="section-label reveal" style="margin-bottom: 0;">NEWS</h1>
   </div>
 
   <div class="section" style="border-top: none; padding-top: 40px;">
-    <div class="news-filter reveal" role="tablist" aria-label="Filter by category">
-      <button class="active" data-cat="all">ALL</button>
-      <button data-cat="notice">NEWS</button>
-      <button data-cat="event">TALKS</button>
-      <button data-cat="media">MEDIA</button>
+    <div class="news-filter reveal">
+      <button class="active" aria-pressed="true" data-cat="all">ALL</button>
+      <button aria-pressed="false" data-cat="notice">NEWS</button>
+      <button aria-pressed="false" data-cat="event">TALKS</button>
+      <button aria-pressed="false" data-cat="media">MEDIA</button>
     </div>
 
     <div class="reveal" id="news-list">
@@ -83,7 +84,7 @@
       <div class="news-item" data-cat="media">
         <span class="news-date">2023.07.30</span>
         <span class="news-cat">MEDIA</span>
-        <span class="news-title">Appeared on PIVOT, a Japanese business video media</span>
+        <span class="news-title">Appeared on PIVOT, a Japanese business media outlet</span>
       </div>
     </div>
   </div>
@@ -121,8 +122,9 @@
   var items = document.querySelectorAll('.news-item');
   buttons.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      buttons.forEach(function (b) { b.classList.remove('active'); });
+      buttons.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       var cat = btn.getAttribute('data-cat');
       items.forEach(function (item) {
         item.style.display = (cat === 'all' || item.getAttribute('data-cat') === cat) ? '' : 'none';

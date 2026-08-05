@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://home.lyta-capital.com/news/">
 <link rel="alternate" hreflang="ja" href="https://home.lyta-capital.com/news/">
 <link rel="alternate" hreflang="en" href="https://home.lyta-capital.com/en/news/">
+<link rel="alternate" hreflang="x-default" href="https://home.lyta-capital.com/en/news/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LYTA CAPITAL">
 <meta property="og:title" content="News | LYTA CAPITAL">
@@ -38,15 +39,15 @@
 <main>
 
   <div class="page-hero">
-    <p class="section-label reveal" style="margin-bottom: 0;">NEWS</p>
+    <h1 class="section-label reveal" style="margin-bottom: 0;">NEWS</h1>
   </div>
 
   <div class="section" style="border-top: none; padding-top: 40px;">
-    <div class="news-filter reveal" role="tablist" aria-label="カテゴリで絞り込む">
-      <button class="active" data-cat="all">すべて</button>
-      <button data-cat="notice">お知らせ</button>
-      <button data-cat="event">イベント・登壇</button>
-      <button data-cat="media">メディア掲載</button>
+    <div class="news-filter reveal">
+      <button class="active" aria-pressed="true" data-cat="all">すべて</button>
+      <button aria-pressed="false" data-cat="notice">お知らせ</button>
+      <button aria-pressed="false" data-cat="event">イベント・登壇</button>
+      <button aria-pressed="false" data-cat="media">メディア掲載</button>
     </div>
 
     <div class="reveal" id="news-list">
@@ -121,8 +122,9 @@
   var items = document.querySelectorAll('.news-item');
   buttons.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      buttons.forEach(function (b) { b.classList.remove('active'); });
+      buttons.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       var cat = btn.getAttribute('data-cat');
       items.forEach(function (item) {
         item.style.display = (cat === 'all' || item.getAttribute('data-cat') === cat) ? '' : 'none';

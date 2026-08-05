@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://home.lyta-capital.com/contact/">
 <link rel="alternate" hreflang="ja" href="https://home.lyta-capital.com/contact/">
 <link rel="alternate" hreflang="en" href="https://home.lyta-capital.com/en/contact/">
+<link rel="alternate" hreflang="x-default" href="https://home.lyta-capital.com/en/contact/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LYTA CAPITAL">
 <meta property="og:title" content="Contact | LYTA CAPITAL">
@@ -39,14 +40,14 @@
 <main>
 
   <div class="page-hero">
-    <p class="section-label reveal" style="margin-bottom: 0;">CONTACT</p>
+    <h1 class="section-label reveal" style="margin-bottom: 0;">CONTACT</h1>
   </div>
 
   <div class="section" style="border-top: none; padding-top: 40px;">
     <div class="contact-wrap">
       <p class="contact-lead reveal">ご連絡は、以下のフォームより承ります。</p>
 
-      <form id="contact-form" class="reveal" novalidate>
+      <form id="contact-form" class="reveal">
         <div class="field">
           <label for="name">お名前</label>
           <input type="text" id="name" name="name" autocomplete="name" required>
@@ -65,6 +66,7 @@
         </div>
         <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none">
         <button type="submit" class="submit-btn">送信 / SEND</button>
+        <p class="form-note">ご入力いただいた情報は、お問い合わせへの対応のみに利用します。</p>
         <p class="form-status" id="form-status" role="status"></p>
       </form>
     </div>
@@ -117,6 +119,8 @@
       return;
     }
 
+    var btn = form.querySelector('.submit-btn');
+    btn.disabled = true;
     status.textContent = '送信しています…';
     fetch(W3F_ENDPOINT, {
       method: 'POST',
@@ -132,6 +136,7 @@
         botcheck: form.botcheck.checked
       })
     }).then(function (res) { return res.json(); }).then(function (data) {
+      btn.disabled = false;
       if (data.success) {
         form.reset();
         status.textContent = '送信しました。折り返しご連絡いたします。';
@@ -139,6 +144,7 @@
         status.textContent = '送信に失敗しました。お手数ですが時間をおいて再度お試しください。';
       }
     }).catch(function () {
+      btn.disabled = false;
       status.textContent = '送信に失敗しました。お手数ですが時間をおいて再度お試しください。';
     });
   });
