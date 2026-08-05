@@ -63,6 +63,7 @@
           <label for="message">メッセージ</label>
           <textarea id="message" name="message" required></textarea>
         </div>
+        <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none">
         <button type="submit" class="submit-btn">送信 / SEND</button>
         <p class="form-status" id="form-status" role="status"></p>
       </form>
@@ -98,10 +99,8 @@
     els.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  // Form endpoint: set FORM_ENDPOINT to a Formspree URL to enable direct submission.
-  // While empty, the form falls back to opening a pre-filled email.
-  var FORM_ENDPOINT = '';
-  var CONTACT_EMAIL = 'arata@lyta-group.com';
+  var W3F_ENDPOINT = 'https://api.web3forms.com/submit';
+  var W3F_KEY = 'b16e7606-b2bd-410e-ac1d-c93893a0f113';
 
   var form = document.getElementById('contact-form');
   var status = document.getElementById('form-status');
@@ -118,30 +117,30 @@
       return;
     }
 
-    if (FORM_ENDPOINT) {
-      status.textContent = '送信しています…';
-      fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, company: company, email: email, message: message })
-      }).then(function (res) {
-        if (res.ok) {
-          form.reset();
-          status.textContent = '送信しました。折り返しご連絡いたします。';
-        } else {
-          status.textContent = '送信に失敗しました。お手数ですが時間をおいて再度お試しください。';
-        }
-      }).catch(function () {
+    status.textContent = '送信しています…';
+    fetch(W3F_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: W3F_KEY,
+        subject: 'お問い合わせ: ' + name + (company ? ' (' + company + ')' : ''),
+        from_name: 'LYTA CAPITAL Website',
+        name: name,
+        company: company,
+        email: email,
+        message: message,
+        botcheck: form.botcheck.checked
+      })
+    }).then(function (res) { return res.json(); }).then(function (data) {
+      if (data.success) {
+        form.reset();
+        status.textContent = '送信しました。折り返しご連絡いたします。';
+      } else {
         status.textContent = '送信に失敗しました。お手数ですが時間をおいて再度お試しください。';
-      });
-    } else {
-      var subject = encodeURIComponent('お問い合わせ（' + name + '）');
-      var body = encodeURIComponent(
-        'お名前: ' + name + '\nご所属: ' + company + '\nメールアドレス: ' + email + '\n\n' + message
-      );
-      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
-      status.textContent = 'メールソフトが開きます。そのまま送信してください。';
-    }
+      }
+    }).catch(function () {
+      status.textContent = '送信に失敗しました。お手数ですが時間をおいて再度お試しください。';
+    });
   });
 })();
 </script>
